@@ -1,0 +1,36 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Quartz: Validate layout",
+            "type": "process",
+            "command": "python3", 
+            "args": ["validate.py"],
+            "group": "test",
+            "presentation": { "reveal": "always", "panel": "dedicated" },
+            "problemMatcher": {
+                "owner": "quartz",
+                "fileLocation": ["relative", "${workspaceFolder}"], 
+                "pattern": {
+                    "regexp": "^(.+):(\\d+):(\\d+):(error|warning):(QL\\d+):(.*)$",
+                    "file": 1, "line": 2, "column": 3, "severity": 4, "code": 5, "message": 6
+
+                }
+            }
+        },
+        {
+            "label": "Quartz: Build summary",
+            "type": "process",
+            "command": "python3",
+            "args": ["build.py"],
+            "problemMatcher": []
+        },
+        {
+            "label": "Quartz: Validate then build",
+            "dependsOrder": "sequence", 
+            "dependsOn": ["Quartz: Validate layout", "Quartz: Build summary"],
+            "group": { "kind": "build", "isDefault": true },
+            "problemMatcher": []
+        }
+    ]
+}
