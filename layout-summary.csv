@@ -1,0 +1,7 @@
+screen,parent,depth,widgets
+home,-,0,hero nav
+catalog,home,1,grid nav
+checkout,catalog,2,form
+detail,catalog,2,gallery
+zoom,catalog,2,gallery
+variant,detail,3,grid

@@ -4,11 +4,11 @@
         { "id": "catalog",  "parent": "home",    "widgets": ["grid", "nav"] },
         { "id": "detail",   "parent": "catalog", "widgets": ["gallery"] },
         { "id": "variant",  "parent": "detail",  "widgets": ["grid"] },
-        { "id": "zoom",     "parent": "variant", "widgets": ["gallery"] },
-        { "id": "checkout", "parent": "basket",  "widgets": ["form"] },
-        { "id": "catalog",  "parent": "home",    "widgets": ["grid"] }
+        { "id": "zoom",     "parent": "catalog", "widgets": ["gallery"] },
+        { "id": "checkout", "parent": "catalog",  "widgets": ["form"] }
     ],
     "widgets": [
         { "id": "hero" }, { "id": "nav" }, { "id": "grid" }, {"id": "form" }
     ]
 }
+
